@@ -23,7 +23,6 @@ public class ArtikelListener {
         this.mailing = mailing;
     }
 
-
     @RabbitListener(queues = "sportartikels")
     void verwerkBericht(ArtikelGemaakt gemaakt) {
         for (Sporter sporter : service.findAll()) {

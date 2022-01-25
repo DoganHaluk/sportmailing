@@ -22,7 +22,7 @@ public class DefaultSporterMailing implements SporterMailing {
             var message = new SimpleMailMessage();
             message.setTo(sporter.getEmailAdres());
             message.setSubject("Nieuw artikel");
-            message.setText("Er is een nieuw artikel:" + gemaakt.getNaam());
+            message.setText("Er is een nieuw artikel: " + gemaakt.getNaam() + " " + gemaakt.getVerkoopprijs() + "€");
             sender.send(message);
         } catch (MailException ex) {
             throw new KanMailNietZendenException(ex);
